@@ -16,7 +16,7 @@ class LinkedList {
       return
     }
 
-    let tail = this.head.next
+    let tail = this.head
 
     while (tail.next) {
       tail = tail.next
@@ -27,13 +27,13 @@ class LinkedList {
 
   public at (index: number): Node {
     if (!this.head) {
-      throw new Error('out of bound!')
+      throw new Error('empty linkedlist')
     }
 
     let counter = 0
     let node = this.head
 
-    while (node.next) {
+    while (node) {
       if (counter === index) {
         return node
       }
@@ -66,7 +66,7 @@ class LinkedList {
     }
 
     let length = 1
-    let node = this.head.next
+    let node = this.head
 
     while (node.next) {
       length++
